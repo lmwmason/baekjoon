@@ -31,5 +31,5 @@ int main() {
         else
             right--;
     }
-    cout << a << " " << b << "\n";
+    cout<<a<<" "<<b<<endl;
 }
