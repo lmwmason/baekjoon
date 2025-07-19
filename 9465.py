@@ -4,9 +4,7 @@ def solve():
     for _ in range(2):
         row = list(map(int, input().split()))
         sti.append(row)
-
     dp = [[0] * n for _ in range(2)]
-
     dp[0][0] = sti[0][0]
     dp[1][0] = sti[1][0]
 
