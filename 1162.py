@@ -17,7 +17,8 @@ for i in range(k+1): d[i][1] = 0
 hq = [(0, 1, 0)]
 while hq:
     cost, x, p = heapq.heappop(hq)
-    if cost > d[p][x]: continue
+    if cost > d[p][x]:
+        continue
     for y, w in g[x]:
         if d[p][y] > cost + w:
             d[p][y] = cost + w
