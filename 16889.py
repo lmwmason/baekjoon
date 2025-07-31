@@ -16,3 +16,4 @@ if state == 0:
     print("cubelover")
 else :
     print("koosaga")
+    
