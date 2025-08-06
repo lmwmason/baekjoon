@@ -1,25 +1,21 @@
-def fib(n) :
-    if n==0 :
-        return 0
-    elif n==1 :
-        return 1
-    else :
-        return fib(n-1) + fib(n-2)
+import sys
 
+input = sys.stdin.readline
 
-def get_fib_num(a,b) :
-    cnt = 0
-    i = 0
-    while True :
-        if fib(i) >= a and fib(i) <= b :
-            cnt += 1
-        if fib(i) > b :
-            break
-        i+=1
-    return cnt
+fib = [1,1]
+i = 1
+while fib[-1] < 10**100:
+    fib.append(fib[i]+fib[i-1])
+    i+=1
 
-while True :
-    a,b = map(int, input().split())
+while True:
+    a,b = map(int , input().split(" "))
     if a == 0 and b == 0:
-        exit()
-    print(get_fib_num(a, b))
+        break
+    num_before_a,num_before_b = 0,0
+    for i in range(0,len(fib)):
+        if fib[i] >= a and num_before_a == 0:
+            num_before_a = i
+        if fib[i] > b and num_before_b == 0:
+            num_before_b = i
+    print(num_before_b-num_before_a)
