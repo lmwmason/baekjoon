@@ -1,6 +1,3 @@
-import sys
-input=sys.stdin.readline
-
 n=int(input())
 h=[]
 i,j=1,1
@@ -10,11 +7,11 @@ while i*j<=n:
     j+=2
 
 dp=[0]
-for x in range(1,n+1):
+for i in range(1,n+1):
     m=99999999999999999999999999999999999999999999
-    for v in h:
-        if v>x: break
-        m=min(m,1+dp[x-v])
+    for j in h:
+        if j>i: break
+        m=min(m,1+dp[i-j])
     dp.append(m)
 
 print(dp[-1])
